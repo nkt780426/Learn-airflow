@@ -20,7 +20,7 @@ Workflow là gì ?
 - Workflow là 1 khái niệm mindset chỉ cách thực hiện 1 công việc nào đó. 
 - Được định nghĩa trong lập trình bằng DAG. Trong 1 DAG có thể có rất nhiều các task và được sắp xếp 1 cách tuần tự thứ tự thực hiện
 - Trong airflow, workflow được xác định trong thư mục dags (directed acyclic graph)
-- Ví dụ: (hình 2.workflow)
+- Ví dụ: (hình 4.workflow)
     Task A được thực hiện xong sẽ thực hiện song song 2 task B và C sau đến D, E => Sự tuần tự thực hiện các task trong 1 workflow vừa nói (không thể thực hiện task B và C xong mới thực hiện task A)
     Các tasks dependence nhau
 Dag, Task, Operator là gì ? (hình 4. workflow)
