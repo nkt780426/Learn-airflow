@@ -1,0 +1,160 @@
+Nguồn học: https://www.youtube.com/watch?v=K9AnJ9_ZAXE&t=234s
+
+1. Airflow Introduction
+2. Run Airflow in Python Env (không dùng, thích có thể xem cài đặt trên Linux)
+3. Run Airflow in Docker (Bài này dùng)
+- Đọc cách tạo airflow bằng docker compose: https://airflow.apache.org/docs/apache-airflow/stable/howto/docker-compose/index.html
+
+- start project
+    docker compose up airflow-init && docker compose up -d
+- stop project:
+    docker compose down -v  (-v nghĩa là bỏ cả volumn được tạo ra)
+
+4. Airflow Basics and Core Concepts
+Airflow là gì ?
+- Được phát triển bởi Airbnb vào năm 2014 để manage lượng complex workflow ngày càng tăng
+- Trở thành project của Apache vào March 2016 và trở thành top-level của công ty apache vào January 2019
+- Là workflow management platforms phổ biến nhất
+- Được viết bằng python
+Workflow là gì ?
+- Workflow là 1 khái niệm mindset chỉ cách thực hiện 1 công việc nào đó. 
+- Được định nghĩa trong lập trình bằng DAG. Trong 1 DAG có thể có rất nhiều các task và được sắp xếp 1 cách tuần tự thứ tự thực hiện
+- Trong airflow, workflow được xác định trong thư mục dags (directed acyclic graph)
+- Ví dụ: (hình 2.workflow)
+    Task A được thực hiện xong sẽ thực hiện song song 2 task B và C sau đến D, E => Sự tuần tự thực hiện các task trong 1 workflow vừa nói (không thể thực hiện task B và C xong mới thực hiện task A)
+    Các tasks dependence nhau
+Dag, Task, Operator là gì ? (hình 4. workflow)
+- Task:
+    Task là 1 khái niệm mindset
+    Khi làm việc 1 workflow, 1 suy nghĩ phổ biến là module hóa nó thành các task nhỏ hơn để dễ dàng thực hiện => Task là 1 unit của workflow/DAG (được đại diện bởi 1 node trong đồ thị DAG)
+    C được gọi là downstream của task A
+    C được gọi là upstream của task E
+- Operator:
+    Task chỉ là khái niệm mindset, để thực thị 1 task trong airflow ta cần sử dụng các operator
+    Có rất nhiều loại Operator trong airflow như BashOperator, PythonOperator, ... (thậm chí có thể customize 1 Operator mới)
+    BashOperator: Thực thi các câu lệnh Bash
+    PythonOperator: thực thi các câu lệnh Python
+Execution Date, Task Instance, Dag run là gì ? (hình 4. instance)
+    Dag, task, operator ở trên chỉ là class, còn mấy cái khái niệm này là instance
+    Excution date là thời gian để chạy dag 1 cách tự động, chỉ cần lên lịch thì dag sẽ tự động chạy (lý do cần airflow)
+    Task instance đại diện cho task tại mỗi thời điểm thực thi Dag khác nhau
+    Dag run đại diện cho dag tại mỗi thời điểm chạy khác nhau
+
+5. Airflow Task Lifecycle (hình 5. task_status, 5. task_life_cycle) (chính ra là workflow Lifecycle)
+
+- Workflow ban đầu ở trạng thái "No status": Scheduler tạo ra các empty task và lên lích thực hiện các task 1 cách sequence như phần 4 đã nói
+    "scheduled": các task trong workflow/dag được lên lịch thành công
+    "removed": nếu bị scheduled bỏ
+    "upstream" failed: khi upstream của task failed
+    "skipped": nếu task không được thực thi
+- Dag nếu may mắn sau bước trên sẽ ở trạng thái "scheduled" và chuyển đến cho excutor.
+    "queue": task được excutor ném vào queue chờ thưc thị, lúc này staus của workflow chuyển sang "queue"
+    "running": worker sẽ thực thi task nếu nó có tài nguyên đủ dùng, lúc này staus workflow chuyển sang "runing"
+    Dựa vào kết quả worker thực thi task, task sau cùng sẽ có các trạng thái "success", "failed", "shutdown" (bắt đầu bị hủy bỏ)
+- Worker sẽ cố gắng retry lại task nếu nó "failed" hoặc "shutdown", lúc này task sẽ ở trạng thái "up for retry" và được đựa lại cho scheduler lên lịch
+- Trong 1 vài trường hợp, khi task ở trạng thái "running" có thể được chuyển đến trạng thái "up to reschedule" nghĩa là task sẽ được lặp lại trong 1 khoảng thời gian nào đó
+
+=> Tóm lại: 1 workflow tốt sẽ bắt đầu với "no staus" sau đó được scheduled lên lịch các task và được excutor đặt các task vào trong queue chờ worker lấy ra thực thi. Worker sẽ thực thi thành công tất cả các task và workflow sẽ ở trạng thái "success"
+
+6. Airflow Basic Architecture (6. architech)
+
+- Data Engineer: người build và mornitoring tất cả ELT proceess => Dùng tool để quản lý ELT script là airflow
+- Để config được airflow cần phải config các thành phần như:
+    Loại excutor của airflow, loại database sẽ sử dụng
+- Data Engineer sẽ tạo và quản lý các workflow/dag thông qua User Interface (giao diện) của airflow
+    Giao điện được support bởi web server
+- Dags phải được nhìn thấy bởi các tiến trình như scheduler, workers
+- Ngoài các thành phần trên trong airflow còn có excutor dùng để lưu trữ những update hoặc lấy lại thông tin của dags
+=> Tất cả 4 thành phần (web server, scheduler, executor, workers) đều phải liên kết với 1 database nào đó như postgresql, mysql, sqllite, ...
+
+7. Airflow DAG with Bash Operator
+
+- Trong docker compose clone về từ hãng, chỉnh lại biến môi trường sau để không load các example mẫu
+    AIRFLOW__CORE__LOAD_EXAMPLES: 'false'
+- Xem file first_dag.py trong thư mục dags
+
+8. Airflow DAG with Python Operator
+
+- Xem file create_dag_with_python_opertor.py
+
+9. Data Sharing via Airflow XComs
+
+Có thể chia sẻ thông tin giữa 2 task với nhau trong cùng 1 workflow/dag không ?
+- Sử dụng Xcoms
+- Xcoms như là volume trong docker, lưu trữ dữ liệu dưới dạng key-value trong DB của airflow
+- Mỗi Xcoms có 1 key (tên dữ liệu), value (dữ liệu thực tế), một task_id (ID của nhiệm vụ tạo ra Xcom) và 1 dag_id(ID của DAG chứa task đó)
+- Mối task có thể được push/pull vào xcom bằng hàm "xcom_push"/"xcom_pull"
+- Thường sử dụng PythonOperator để thao tác với Xcoms
+Xem file xcoms_dag.py
+Theo mặc định các hàm return lại value sẽ được lưu vào xcom. và các hàm khác có thấy lấy value từ Xcoms
+Xcoms chỉ có max size là 48Kb => Không dùng Xcoms để chia sẽ dữ liệu lớn
+
+10. Airflow Task Flow API
+
+Qua việc thực hành các file "create_dag_with_python_operator.py", "our_first_dag.py", "xcom_dag.py" ta có thể thấy code các task rất rõ ràng, tuy nhiên khi số lượng task lớn lên, việc tự tay thiết lập logic dag trở lên khó khăn và có thể không tối ưu => Taskflow API là 1 API của airflow giúp chúng ta tự động cấu hình workflow các task sao cho tối ưu nhất
+Xem file "dag_with_task_flow_api.py"
+
+11. Airflow Catch-Up and Backfill
+
+Catchup: Khi thiết lập dag, ta cấu hình startdate. Tham số catchup trong một DAG quyết định xem Airflow có nên tự động chạy tất cả các lần chạy đã bị bỏ lỡ từ start_date cho đến ngày hiện tại khi DAG được kích hoạt hoặc bật lên lần đầu tiên hay không.
+Backfill là quá trình chạy lại các task của một DAG cho các khoảng thời gian trong quá khứ mà DAG đã bị bỏ lỡ hoặc chưa được thực thi. Điều này thường được sử dụng khi có thay đổi trong DAG hoặc dữ liệu nguồn và cần phải cập nhật lại kết quả cho các khoảng thời gian trước đó.
+
+12. Airflow Scheduler with Cron Expression
+
+Cross Expression (xem hình 12. cross_expression.png)
+Airflow cung cấp 1 vài cross_expression có sẵn (xem hình 12. airflow_cross_expression)
+- Sử dụng trang crontab guru để sinh cross expression phù hợp
+Xem file dag_with_cross_expression.py
+
+13. Airflow Connection to Postgres
+
+Khi viết script ELT, hiển nhiên phải có nhu cầu kết nối đến nhiều source để thu thập dữ liệu (hình 13. collection)
+- Để kết nối với các thành phần này, nhiều lúc bạn cần phải cung cấp username/password/ip_host/...
+- Airflow collection được thực hiện bởi corresponding operator (là tập hợp các operator làm mục đích kết nối đọc phần 14, 15, 16, 17)
+- Xem file dag_with_postgres_operator.py
+
+14. Airflow Postgres Operator
+
+Xem file dag_with_postgres_operator.py
+
+15. Airflow Docker Install Python Package 2 ways
+
+Để cài đặt dependence cho airflow container có 2 cách
+- Extension airflow image mà hãng cung cấp (hầu hết đều theo cách này)
+- Cunstom airflow image
+Extension airflow image
+- B1: tạo file requirements.txt ở thư mục root của project
+- B2: tạo Dockerfilư ở thư mục root của project
+    Build extending image: docker build . --tag extending_airflow:lastest
+- B3: Thay thế image trong docker compose của hãng
+        ---
+        x-airflow-common:
+        &airflow-common
+        # In order to add custom dependencies or upgrade provider packages you can use your extended image.
+        # Comment the image line, place your Dockerfile in the directory where you placed the docker-compose.yaml
+        # and uncomment the "build" line below, Then run `docker-compose build` to build the images.
+        image: ${AIRFLOW_IMAGE_NAME:-apache/airflow:2.9.2}
+    => Thay image: apache/airflow:2.9.2 thành extending_airflow:lastest
+
+16. Airflow AWS S3 Sensor Operator
+
+Sensor operator là 1 loại operator đặc biệt, nó sẽ được kích hoạt khi có sự kiện nào đó xảy ra (ví dụ khi update 1 file csv trên s3)
+Cài MinIO:
+- Cài theo phương thức Docker root full và set up thư mục data trong project này thay vì ~/minio/data
+    mkdir -p ./minio/data
+    docker run \
+    -p 9000:9000 \
+    -p 9001:9001 \
+    --name minio \
+    -v ./minio/data:/data \
+    -e "MINIO_ROOT_USER=ROOTNAME" \
+    -e "MINIO_ROOT_PASSWORD=CHANGEME123" \
+    quay.io/minio/minio server /data --console-address ":9001"
+- Tạo airflow bucket và kéo file csv mẫu trong thư mục data vào bucket
+- Vào container scheduler chạy lệnh sau để tìm version của apache-airflow-providers-amazon
+    pip list | grep amazon
+    
+- Lưu ý, AWS S3 connection đã bị removed và thay bằng https://www.youtube.com/watch?v=sVNvAtIZWdQ&t=184s (chú ý cái endpoint)
+17. Airflow Hooks S3 PostgreSQL
+
+Airflow Hook được sử dụng để tạo 1 kết nối với các hệ thống và dịch vụ bên ngoài như CSDL và các hệ thống lưu trữ đám mây khác. Hooks cung cấp 1 lớp trừu tượng để dễ dàng giao tiếp với các dịch vụ bên ngoài mà không cần phải viết mã kết nối từng loại cho chúng
