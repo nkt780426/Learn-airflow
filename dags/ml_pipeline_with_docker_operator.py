@@ -20,8 +20,8 @@ with DAG(
     dataset_creation_task = BashOperator(
         task_id="faked_dataset_creation_task",
         bash_command="""
-echo "Hey the dataset is ready, let's trigger the training process"
-"""
+            echo "Hey the dataset is ready, let's trigger the training process"
+        """
     )
 
     model_train_and_publish_task = DockerOperator(

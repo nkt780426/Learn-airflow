@@ -159,9 +159,14 @@ Cài MinIO:
 
 Airflow Hook được sử dụng để tạo 1 kết nối với các hệ thống và dịch vụ bên ngoài như CSDL và các hệ thống lưu trữ đám mây khác. Hooks cung cấp 1 lớp trừu tượng để dễ dàng giao tiếp với các dịch vụ bên ngoài mà không cần phải viết mã kết nối từng loại cho chúng
 
-18. Lỗi DockerOperator
-- Xem các bài sau: https://stackoverflow.com/questions/72660682/how-to-use-the-airflow-dockeroperator-on-windows
-- https://github.com/apache/airflow/issues/16803
+18. DockerOperator
+- Cách fix lỗi: https://github.com/apache/airflow/issues/16803
+=> sudo chmode 777 /var/run/docker.sock
+    Thêm 2 volume 
+        '/var/run/docker.sock:/var/run/docker.sock'
+        '/tmp:/tmp'
+    Kích hoạt bật xác thực không TLS
+        Docker desktop => General => Bật TLS tcp:2375 gì đó
 
 Phần tiếp theo của khóa học 2 tiếng trên: https://www.youtube.com/watch?v=uZy2Lwioi3g&t=336s
 DockerOperator sẽ tun task bên trong Docker container thay vì PythonOperator như ở trên

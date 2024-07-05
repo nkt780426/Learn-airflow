@@ -1,0 +1,441 @@
+[2024-07-05T05:13:21.066+0000] {manager.py:470} INFO - Processing files using up to 2 processes at a time 
+[2024-07-05T05:13:21.067+0000] {manager.py:471} INFO - Process each file at most once every 30 seconds
+[2024-07-05T05:13:21.068+0000] {manager.py:472} INFO - Checking for new files in /opt/airflow/dags every 300 seconds
+[2024-07-05T05:13:21.068+0000] {manager.py:737} INFO - Searching for files in /opt/airflow/dags
+[2024-07-05T05:13:21.077+0000] {manager.py:740} INFO - There are 11 files in /opt/airflow/dags
+[2024-07-05T05:13:22.634+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                                PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-----------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/ml_pipeline_with_docker_operator.py                           1           0  0.91s           2024-07-05T05:13:22
+/opt/airflow/dags/our_first_dag.py                                              0           0
+/opt/airflow/dags/dag_with_cross_expression.py                                  0           0
+/opt/airflow/dags/xcom_dag.py                                                   0           0
+/opt/airflow/dags/dag_with_postgress_hook.py             175  0.03s             0           0
+/opt/airflow/dags/dag_with_python_dependence.py                                 0           0
+/opt/airflow/dags/create_dag_with_python_operator.py                            0           0
+/opt/airflow/dags/dag_with_task_flow_api.py                                     0           0
+/opt/airflow/dags/dag_with_minio_s3.py                   178  0.00s             0           0
+/opt/airflow/dags/dag_with_catchup_and_backfill.py                              0           0
+/opt/airflow/dags/dag_with_postgres_operator.py                                 0           0
+================================================================================
+[2024-07-05T05:13:53.092+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                                PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-----------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/ml_pipeline_with_docker_operator.py    231  0.02s             1           0  0.91s           2024-07-05T05:13:22
+/opt/airflow/dags/dag_with_catchup_and_backfill.py                              1           0  0.33s           2024-07-05T05:13:23
+/opt/airflow/dags/dag_with_minio_s3.py                                          1           0  0.33s           2024-07-05T05:13:22
+/opt/airflow/dags/dag_with_task_flow_api.py                                     1           0  0.30s           2024-07-05T05:13:23
+/opt/airflow/dags/dag_with_postgress_hook.py             234  0.01s             1           0  0.29s           2024-07-05T05:13:22
+/opt/airflow/dags/xcom_dag.py                                                   1           0  0.26s           2024-07-05T05:13:23
+/opt/airflow/dags/dag_with_cross_expression.py                                  1           0  0.25s           2024-07-05T05:13:23
+/opt/airflow/dags/create_dag_with_python_operator.py                            1           0  0.23s           2024-07-05T05:13:23
+/opt/airflow/dags/our_first_dag.py                                              1           0  0.23s           2024-07-05T05:13:24
+/opt/airflow/dags/dag_with_postgres_operator.py                                 1           0  0.22s           2024-07-05T05:13:23
+/opt/airflow/dags/dag_with_python_dependence.py                                 1           0  0.22s           2024-07-05T05:13:23
+================================================================================
+[2024-07-05T05:14:23.919+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                                PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-----------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/dag_with_postgress_hook.py             305  0.00s             1           0  0.22s           2024-07-05T05:13:53
+/opt/airflow/dags/ml_pipeline_with_docker_operator.py    302  0.01s             1           0  0.19s           2024-07-05T05:13:53
+/opt/airflow/dags/dag_with_minio_s3.py                                          1           0  0.13s           2024-07-05T05:13:53
+/opt/airflow/dags/dag_with_python_dependence.py                                 1           0  0.12s           2024-07-05T05:13:53
+/opt/airflow/dags/dag_with_postgres_operator.py                                 1           0  0.10s           2024-07-05T05:13:53
+/opt/airflow/dags/our_first_dag.py                                              1           0  0.10s           2024-07-05T05:13:54
+/opt/airflow/dags/dag_with_cross_expression.py                                  1           0  0.09s           2024-07-05T05:13:53
+/opt/airflow/dags/dag_with_catchup_and_backfill.py                              1           0  0.09s           2024-07-05T05:13:54
+/opt/airflow/dags/dag_with_task_flow_api.py                                     1           0  0.09s           2024-07-05T05:13:54
+/opt/airflow/dags/create_dag_with_python_operator.py                            1           0  0.09s           2024-07-05T05:13:54
+/opt/airflow/dags/xcom_dag.py                                                   1           0  0.09s           2024-07-05T05:13:54
+================================================================================
+[2024-07-05T05:14:54.625+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                                PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-----------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/dag_with_task_flow_api.py                                     1           0  0.10s           2024-07-05T05:14:25
+/opt/airflow/dags/dag_with_catchup_and_backfill.py                              1           0  0.10s           2024-07-05T05:14:25
+/opt/airflow/dags/dag_with_postgres_operator.py                                 1           0  0.09s           2024-07-05T05:14:24
+/opt/airflow/dags/create_dag_with_python_operator.py                            1           0  0.09s           2024-07-05T05:14:25
+/opt/airflow/dags/dag_with_minio_s3.py                                          1           0  0.09s           2024-07-05T05:14:24
+/opt/airflow/dags/our_first_dag.py                                              1           0  0.09s           2024-07-05T05:14:25
+/opt/airflow/dags/dag_with_cross_expression.py                                  1           0  0.09s           2024-07-05T05:14:24
+/opt/airflow/dags/xcom_dag.py                                                   1           0  0.09s           2024-07-05T05:14:25
+/opt/airflow/dags/dag_with_postgress_hook.py             366  0.00s             1           0  0.09s           2024-07-05T05:14:24
+/opt/airflow/dags/dag_with_python_dependence.py                                 1           0  0.09s           2024-07-05T05:14:24
+/opt/airflow/dags/ml_pipeline_with_docker_operator.py    363  0.01s             1           0  0.09s           2024-07-05T05:14:23
+================================================================================
+[2024-07-05T05:15:25.361+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                                PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-----------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/xcom_dag.py                                                   1           0  0.11s           2024-07-05T05:14:56
+/opt/airflow/dags/dag_with_postgres_operator.py                                 1           0  0.10s           2024-07-05T05:14:54
+/opt/airflow/dags/create_dag_with_python_operator.py                            1           0  0.10s           2024-07-05T05:14:56
+/opt/airflow/dags/our_first_dag.py                                              1           0  0.10s           2024-07-05T05:14:56
+/opt/airflow/dags/dag_with_cross_expression.py                                  1           0  0.10s           2024-07-05T05:14:54
+/opt/airflow/dags/dag_with_catchup_and_backfill.py                              1           0  0.10s           2024-07-05T05:14:56
+/opt/airflow/dags/dag_with_task_flow_api.py                                     1           0  0.10s           2024-07-05T05:14:56
+/opt/airflow/dags/dag_with_python_dependence.py                                 1           0  0.09s           2024-07-05T05:14:54
+/opt/airflow/dags/dag_with_minio_s3.py                                          1           0  0.09s           2024-07-05T05:14:54
+/opt/airflow/dags/dag_with_postgress_hook.py             427  0.00s             1           0  0.09s           2024-07-05T05:14:54
+/opt/airflow/dags/ml_pipeline_with_docker_operator.py    424  0.01s             1           0  0.09s           2024-07-05T05:14:54
+================================================================================
+[2024-07-05T05:15:56.018+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                                PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-----------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/xcom_dag.py                                                   1           0  0.11s           2024-07-05T05:15:26
+/opt/airflow/dags/dag_with_task_flow_api.py                                     1           0  0.11s           2024-07-05T05:15:26
+/opt/airflow/dags/dag_with_catchup_and_backfill.py                              1           0  0.11s           2024-07-05T05:15:26
+/opt/airflow/dags/create_dag_with_python_operator.py                            1           0  0.10s           2024-07-05T05:15:26
+/opt/airflow/dags/our_first_dag.py                                              1           0  0.10s           2024-07-05T05:15:26
+/opt/airflow/dags/dag_with_postgres_operator.py                                 1           0  0.09s           2024-07-05T05:15:25
+/opt/airflow/dags/ml_pipeline_with_docker_operator.py    485  0.01s             1           0  0.09s           2024-07-05T05:15:25
+/opt/airflow/dags/dag_with_postgress_hook.py             488  0.00s             1           0  0.09s           2024-07-05T05:15:25
+/opt/airflow/dags/dag_with_python_dependence.py                                 1           0  0.09s           2024-07-05T05:15:25
+/opt/airflow/dags/dag_with_minio_s3.py                                          1           0  0.09s           2024-07-05T05:15:25
+/opt/airflow/dags/dag_with_cross_expression.py                                  1           0  0.09s           2024-07-05T05:15:25
+================================================================================
+[2024-07-05T05:16:26.741+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                                PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-----------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/dag_with_postgres_operator.py                                 1           0  0.11s           2024-07-05T05:15:56
+/opt/airflow/dags/dag_with_minio_s3.py                                          1           0  0.10s           2024-07-05T05:15:56
+/opt/airflow/dags/dag_with_cross_expression.py                                  1           0  0.10s           2024-07-05T05:15:56
+/opt/airflow/dags/our_first_dag.py                                              1           0  0.09s           2024-07-05T05:15:57
+/opt/airflow/dags/dag_with_catchup_and_backfill.py                              1           0  0.09s           2024-07-05T05:15:57
+/opt/airflow/dags/dag_with_task_flow_api.py                                     1           0  0.09s           2024-07-05T05:15:57
+/opt/airflow/dags/create_dag_with_python_operator.py                            1           0  0.09s           2024-07-05T05:15:57
+/opt/airflow/dags/dag_with_python_dependence.py                                 1           0  0.09s           2024-07-05T05:15:56
+/opt/airflow/dags/dag_with_postgress_hook.py             549  0.00s             1           0  0.09s           2024-07-05T05:15:56
+/opt/airflow/dags/xcom_dag.py                                                   1           0  0.09s           2024-07-05T05:15:57
+/opt/airflow/dags/ml_pipeline_with_docker_operator.py    546  0.01s             1           0  0.09s           2024-07-05T05:15:56
+================================================================================
+[2024-07-05T05:16:57.441+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                                PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-----------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/dag_with_postgres_operator.py                                 1           0  0.10s           2024-07-05T05:16:27
+/opt/airflow/dags/dag_with_python_dependence.py                                 1           0  0.09s           2024-07-05T05:16:26
+/opt/airflow/dags/dag_with_task_flow_api.py                                     1           0  0.09s           2024-07-05T05:16:28
+/opt/airflow/dags/dag_with_cross_expression.py                                  1           0  0.09s           2024-07-05T05:16:27
+/opt/airflow/dags/dag_with_catchup_and_backfill.py                              1           0  0.09s           2024-07-05T05:16:28
+/opt/airflow/dags/dag_with_minio_s3.py                                          1           0  0.09s           2024-07-05T05:16:26
+/opt/airflow/dags/create_dag_with_python_operator.py                            1           0  0.09s           2024-07-05T05:16:28
+/opt/airflow/dags/dag_with_postgress_hook.py             610  0.00s             1           0  0.09s           2024-07-05T05:16:26
+/opt/airflow/dags/xcom_dag.py                                                   1           0  0.09s           2024-07-05T05:16:28
+/opt/airflow/dags/our_first_dag.py                                              1           0  0.09s           2024-07-05T05:16:28
+/opt/airflow/dags/ml_pipeline_with_docker_operator.py    607  0.01s             1           0  0.09s           2024-07-05T05:16:26
+================================================================================
+[2024-07-05T05:17:28.148+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                                PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-----------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/dag_with_task_flow_api.py                                     1           0  0.10s           2024-07-05T05:16:58
+/opt/airflow/dags/dag_with_catchup_and_backfill.py                              1           0  0.10s           2024-07-05T05:16:58
+/opt/airflow/dags/create_dag_with_python_operator.py                            1           0  0.10s           2024-07-05T05:16:59
+/opt/airflow/dags/our_first_dag.py                                              1           0  0.10s           2024-07-05T05:16:59
+/opt/airflow/dags/xcom_dag.py                                                   1           0  0.10s           2024-07-05T05:16:58
+/opt/airflow/dags/dag_with_postgres_operator.py                                 1           0  0.09s           2024-07-05T05:16:57
+/opt/airflow/dags/dag_with_python_dependence.py                                 1           0  0.09s           2024-07-05T05:16:57
+/opt/airflow/dags/dag_with_minio_s3.py                                          1           0  0.09s           2024-07-05T05:16:57
+/opt/airflow/dags/dag_with_cross_expression.py                                  1           0  0.09s           2024-07-05T05:16:57
+/opt/airflow/dags/dag_with_postgress_hook.py             671  0.00s             1           0  0.08s           2024-07-05T05:16:57
+/opt/airflow/dags/ml_pipeline_with_docker_operator.py    668  0.01s             1           0  0.08s           2024-07-05T05:16:57
+================================================================================
+[2024-07-05T05:17:58.989+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                                PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-----------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/ml_pipeline_with_docker_operator.py                           1           0  0.18s           2024-07-05T05:17:48
+/opt/airflow/dags/create_dag_with_python_operator.py                            1           0  0.15s           2024-07-05T05:17:29
+/opt/airflow/dags/our_first_dag.py                                              1           0  0.15s           2024-07-05T05:17:29
+/opt/airflow/dags/xcom_dag.py                                                   1           0  0.14s           2024-07-05T05:17:29
+/opt/airflow/dags/dag_with_task_flow_api.py                                     1           0  0.13s           2024-07-05T05:17:29
+/opt/airflow/dags/dag_with_catchup_and_backfill.py                              1           0  0.12s           2024-07-05T05:17:29
+/opt/airflow/dags/dag_with_cross_expression.py                                  1           0  0.11s           2024-07-05T05:17:28
+/opt/airflow/dags/dag_with_postgres_operator.py                                 1           0  0.11s           2024-07-05T05:17:28
+/opt/airflow/dags/dag_with_python_dependence.py                                 1           0  0.10s           2024-07-05T05:17:28
+/opt/airflow/dags/dag_with_minio_s3.py                   737  0.00s             1           0  0.10s           2024-07-05T05:17:28
+/opt/airflow/dags/dag_with_postgress_hook.py             734  0.01s             1           0  0.09s           2024-07-05T05:17:28
+================================================================================
+[2024-07-05T05:18:21.672+0000] {manager.py:737} INFO - Searching for files in /opt/airflow/dags
+[2024-07-05T05:18:21.675+0000] {manager.py:740} INFO - There are 11 files in /opt/airflow/dags
+[2024-07-05T05:18:29.730+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                                PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-----------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/dag_with_postgres_operator.py                                 1           0  0.10s           2024-07-05T05:17:59
+/opt/airflow/dags/dag_with_task_flow_api.py                                     1           0  0.10s           2024-07-05T05:18:00
+/opt/airflow/dags/dag_with_catchup_and_backfill.py                              1           0  0.10s           2024-07-05T05:18:00
+/opt/airflow/dags/dag_with_minio_s3.py                   798  0.00s             1           0  0.10s           2024-07-05T05:17:59
+/opt/airflow/dags/create_dag_with_python_operator.py                            1           0  0.10s           2024-07-05T05:18:00
+/opt/airflow/dags/our_first_dag.py                                              1           0  0.10s           2024-07-05T05:18:00
+/opt/airflow/dags/dag_with_postgress_hook.py             795  0.01s             1           0  0.10s           2024-07-05T05:17:59
+/opt/airflow/dags/xcom_dag.py                                                   1           0  0.10s           2024-07-05T05:18:00
+/opt/airflow/dags/dag_with_cross_expression.py                                  1           0  0.10s           2024-07-05T05:17:59
+/opt/airflow/dags/dag_with_python_dependence.py                                 1           0  0.09s           2024-07-05T05:17:59
+/opt/airflow/dags/ml_pipeline_with_docker_operator.py                           1           0  0.09s           2024-07-05T05:18:19
+================================================================================
+[2024-07-05T05:19:00.423+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                                PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-----------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/dag_with_catchup_and_backfill.py                              1           0  0.09s           2024-07-05T05:18:31
+/opt/airflow/dags/dag_with_postgres_operator.py                                 1           0  0.09s           2024-07-05T05:18:29
+/opt/airflow/dags/dag_with_task_flow_api.py                                     1           0  0.09s           2024-07-05T05:18:31
+/opt/airflow/dags/create_dag_with_python_operator.py                            1           0  0.09s           2024-07-05T05:18:31
+/opt/airflow/dags/our_first_dag.py                                              1           0  0.09s           2024-07-05T05:18:31
+/opt/airflow/dags/dag_with_minio_s3.py                   859  0.01s             1           0  0.09s           2024-07-05T05:18:29
+/opt/airflow/dags/xcom_dag.py                                                   1           0  0.09s           2024-07-05T05:18:31
+/opt/airflow/dags/dag_with_postgress_hook.py             856  0.01s             1           0  0.09s           2024-07-05T05:18:29
+/opt/airflow/dags/dag_with_python_dependence.py                                 1           0  0.09s           2024-07-05T05:18:29
+/opt/airflow/dags/dag_with_cross_expression.py                                  1           0  0.09s           2024-07-05T05:18:29
+/opt/airflow/dags/ml_pipeline_with_docker_operator.py                           1           0  0.08s           2024-07-05T05:18:50
+================================================================================
+[2024-07-05T05:19:31.163+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                                PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-----------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/dag_with_postgress_hook.py             917  0.01s             1           0  0.12s           2024-07-05T05:19:00
+/opt/airflow/dags/dag_with_postgres_operator.py                                 1           0  0.11s           2024-07-05T05:19:00
+/opt/airflow/dags/dag_with_cross_expression.py                                  1           0  0.11s           2024-07-05T05:19:00
+/opt/airflow/dags/dag_with_minio_s3.py                   920  0.00s             1           0  0.10s           2024-07-05T05:19:00
+/opt/airflow/dags/dag_with_python_dependence.py                                 1           0  0.10s           2024-07-05T05:19:00
+/opt/airflow/dags/xcom_dag.py                                                   1           0  0.10s           2024-07-05T05:19:01
+/opt/airflow/dags/dag_with_task_flow_api.py                                     1           0  0.09s           2024-07-05T05:19:01
+/opt/airflow/dags/dag_with_catchup_and_backfill.py                              1           0  0.09s           2024-07-05T05:19:01
+/opt/airflow/dags/create_dag_with_python_operator.py                            1           0  0.09s           2024-07-05T05:19:02
+/opt/airflow/dags/our_first_dag.py                                              1           0  0.09s           2024-07-05T05:19:02
+/opt/airflow/dags/ml_pipeline_with_docker_operator.py                           1           0  0.08s           2024-07-05T05:19:21
+================================================================================
+[2024-07-05T05:20:01.888+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                                PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-----------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/dag_with_minio_s3.py                   981  0.00s             1           0  0.10s           2024-07-05T05:19:31
+/opt/airflow/dags/dag_with_postgress_hook.py             978  0.01s             1           0  0.10s           2024-07-05T05:19:31
+/opt/airflow/dags/ml_pipeline_with_docker_operator.py                           1           0  0.10s           2024-07-05T05:19:51
+/opt/airflow/dags/dag_with_postgres_operator.py                                 1           0  0.10s           2024-07-05T05:19:31
+/opt/airflow/dags/dag_with_python_dependence.py                                 1           0  0.10s           2024-07-05T05:19:31
+/opt/airflow/dags/dag_with_task_flow_api.py                                     1           0  0.10s           2024-07-05T05:19:32
+/opt/airflow/dags/dag_with_catchup_and_backfill.py                              1           0  0.10s           2024-07-05T05:19:32
+/opt/airflow/dags/create_dag_with_python_operator.py                            1           0  0.09s           2024-07-05T05:19:32
+/opt/airflow/dags/our_first_dag.py                                              1           0  0.09s           2024-07-05T05:19:32
+/opt/airflow/dags/dag_with_cross_expression.py                                  1           0  0.09s           2024-07-05T05:19:31
+/opt/airflow/dags/xcom_dag.py                                                   1           0  0.09s           2024-07-05T05:19:32
+================================================================================
+[2024-07-05T05:20:32.600+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                                PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-----------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/dag_with_postgress_hook.py            1039  0.01s             1           0  0.10s           2024-07-05T05:20:01
+/opt/airflow/dags/dag_with_postgres_operator.py                                 1           0  0.10s           2024-07-05T05:20:02
+/opt/airflow/dags/dag_with_task_flow_api.py                                     1           0  0.09s           2024-07-05T05:20:03
+/opt/airflow/dags/dag_with_catchup_and_backfill.py                              1           0  0.09s           2024-07-05T05:20:03
+/opt/airflow/dags/dag_with_cross_expression.py                                  1           0  0.09s           2024-07-05T05:20:02
+/opt/airflow/dags/dag_with_minio_s3.py                  1042  0.00s             1           0  0.09s           2024-07-05T05:20:01
+/opt/airflow/dags/create_dag_with_python_operator.py                            1           0  0.09s           2024-07-05T05:20:03
+/opt/airflow/dags/our_first_dag.py                                              1           0  0.09s           2024-07-05T05:20:03
+/opt/airflow/dags/dag_with_python_dependence.py                                 1           0  0.09s           2024-07-05T05:20:02
+/opt/airflow/dags/xcom_dag.py                                                   1           0  0.09s           2024-07-05T05:20:03
+/opt/airflow/dags/ml_pipeline_with_docker_operator.py                           1           0  0.09s           2024-07-05T05:20:22
+================================================================================
+[2024-07-05T05:21:03.333+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                                PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-----------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/dag_with_task_flow_api.py                                     1           0  0.10s           2024-07-05T05:20:33
+/opt/airflow/dags/dag_with_postgress_hook.py            1100  0.01s             1           0  0.10s           2024-07-05T05:20:32
+/opt/airflow/dags/dag_with_catchup_and_backfill.py                              1           0  0.10s           2024-07-05T05:20:33
+/opt/airflow/dags/dag_with_postgres_operator.py                                 1           0  0.10s           2024-07-05T05:20:32
+/opt/airflow/dags/create_dag_with_python_operator.py                            1           0  0.09s           2024-07-05T05:20:34
+/opt/airflow/dags/xcom_dag.py                                                   1           0  0.09s           2024-07-05T05:20:34
+/opt/airflow/dags/our_first_dag.py                                              1           0  0.09s           2024-07-05T05:20:34
+/opt/airflow/dags/dag_with_minio_s3.py                  1103  0.00s             1           0  0.09s           2024-07-05T05:20:32
+/opt/airflow/dags/dag_with_python_dependence.py                                 1           0  0.09s           2024-07-05T05:20:32
+/opt/airflow/dags/dag_with_cross_expression.py                                  1           0  0.09s           2024-07-05T05:20:32
+/opt/airflow/dags/ml_pipeline_with_docker_operator.py                           1           0  0.09s           2024-07-05T05:20:53
+================================================================================
+[2024-07-05T05:21:34.001+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                                PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-----------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/dag_with_task_flow_api.py                                     1           0  0.11s           2024-07-05T05:21:04
+/opt/airflow/dags/dag_with_catchup_and_backfill.py                              1           0  0.11s           2024-07-05T05:21:04
+/opt/airflow/dags/ml_pipeline_with_docker_operator.py                           1           0  0.11s           2024-07-05T05:21:24
+/opt/airflow/dags/our_first_dag.py                                              1           0  0.11s           2024-07-05T05:21:04
+/opt/airflow/dags/create_dag_with_python_operator.py                            1           0  0.10s           2024-07-05T05:21:04
+/opt/airflow/dags/dag_with_postgres_operator.py                                 1           0  0.10s           2024-07-05T05:21:03
+/opt/airflow/dags/xcom_dag.py                                                   1           0  0.10s           2024-07-05T05:21:04
+/opt/airflow/dags/dag_with_postgress_hook.py            1161  0.01s             1           0  0.10s           2024-07-05T05:21:03
+/opt/airflow/dags/dag_with_minio_s3.py                  1164  0.01s             1           0  0.10s           2024-07-05T05:21:03
+/opt/airflow/dags/dag_with_cross_expression.py                                  1           0  0.10s           2024-07-05T05:21:03
+/opt/airflow/dags/dag_with_python_dependence.py                                 1           0  0.09s           2024-07-05T05:21:03
+================================================================================
+[2024-07-05T05:22:04.774+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                                PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-----------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/dag_with_minio_s3.py                  1225  0.00s             1           0  0.12s           2024-07-05T05:21:34
+/opt/airflow/dags/dag_with_postgress_hook.py            1222  0.01s             1           0  0.12s           2024-07-05T05:21:34
+/opt/airflow/dags/dag_with_postgres_operator.py                                 1           0  0.11s           2024-07-05T05:21:34
+/opt/airflow/dags/dag_with_cross_expression.py                                  1           0  0.11s           2024-07-05T05:21:34
+/opt/airflow/dags/dag_with_python_dependence.py                                 1           0  0.11s           2024-07-05T05:21:34
+/opt/airflow/dags/dag_with_task_flow_api.py                                     1           0  0.10s           2024-07-05T05:21:35
+/opt/airflow/dags/dag_with_catchup_and_backfill.py                              1           0  0.10s           2024-07-05T05:21:35
+/opt/airflow/dags/create_dag_with_python_operator.py                            1           0  0.10s           2024-07-05T05:21:35
+/opt/airflow/dags/xcom_dag.py                                                   1           0  0.09s           2024-07-05T05:21:35
+/opt/airflow/dags/our_first_dag.py                                              1           0  0.09s           2024-07-05T05:21:35
+/opt/airflow/dags/ml_pipeline_with_docker_operator.py                           1           0  0.08s           2024-07-05T05:21:54
+================================================================================
+[2024-07-05T05:22:35.441+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                                PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-----------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/dag_with_postgres_operator.py                                 1           0  0.10s           2024-07-05T05:22:05
+/opt/airflow/dags/dag_with_task_flow_api.py                                     1           0  0.09s           2024-07-05T05:22:06
+/opt/airflow/dags/dag_with_postgress_hook.py            1283  0.01s             1           0  0.09s           2024-07-05T05:22:04
+/opt/airflow/dags/dag_with_minio_s3.py                  1286  0.00s             1           0  0.09s           2024-07-05T05:22:04
+/opt/airflow/dags/dag_with_catchup_and_backfill.py                              1           0  0.09s           2024-07-05T05:22:06
+/opt/airflow/dags/dag_with_cross_expression.py                                  1           0  0.09s           2024-07-05T05:22:05
+/opt/airflow/dags/create_dag_with_python_operator.py                            1           0  0.09s           2024-07-05T05:22:06
+/opt/airflow/dags/our_first_dag.py                                              1           0  0.09s           2024-07-05T05:22:06
+/opt/airflow/dags/dag_with_python_dependence.py                                 1           0  0.09s           2024-07-05T05:22:04
+/opt/airflow/dags/xcom_dag.py                                                   1           0  0.09s           2024-07-05T05:22:06
+/opt/airflow/dags/ml_pipeline_with_docker_operator.py                           1           0  0.09s           2024-07-05T05:22:25
+================================================================================
+[2024-07-05T05:23:06.101+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                                PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-----------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/dag_with_postgress_hook.py            1344  0.01s             1           0  0.10s           2024-07-05T05:22:35
+/opt/airflow/dags/dag_with_postgres_operator.py                                 1           0  0.10s           2024-07-05T05:22:35
+/opt/airflow/dags/dag_with_catchup_and_backfill.py                              1           0  0.09s           2024-07-05T05:22:36
+/opt/airflow/dags/dag_with_task_flow_api.py                                     1           0  0.09s           2024-07-05T05:22:36
+/opt/airflow/dags/create_dag_with_python_operator.py                            1           0  0.09s           2024-07-05T05:22:36
+/opt/airflow/dags/ml_pipeline_with_docker_operator.py                           1           0  0.09s           2024-07-05T05:22:56
+/opt/airflow/dags/our_first_dag.py                                              1           0  0.09s           2024-07-05T05:22:36
+/opt/airflow/dags/dag_with_cross_expression.py                                  1           0  0.09s           2024-07-05T05:22:35
+/opt/airflow/dags/xcom_dag.py                                                   1           0  0.09s           2024-07-05T05:22:36
+/opt/airflow/dags/dag_with_minio_s3.py                  1347  0.00s             1           0  0.09s           2024-07-05T05:22:35
+/opt/airflow/dags/dag_with_python_dependence.py                                 1           0  0.08s           2024-07-05T05:22:35
+================================================================================
+[2024-07-05T05:23:21.721+0000] {manager.py:737} INFO - Searching for files in /opt/airflow/dags
+[2024-07-05T05:23:21.725+0000] {manager.py:740} INFO - There are 11 files in /opt/airflow/dags
+[2024-07-05T05:23:36.803+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                                PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-----------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/dag_with_catchup_and_backfill.py                              1           0  0.10s           2024-07-05T05:23:07
+/opt/airflow/dags/dag_with_task_flow_api.py                                     1           0  0.10s           2024-07-05T05:23:07
+/opt/airflow/dags/create_dag_with_python_operator.py                            1           0  0.10s           2024-07-05T05:23:07
+/opt/airflow/dags/xcom_dag.py                                                   1           0  0.10s           2024-07-05T05:23:07
+/opt/airflow/dags/dag_with_minio_s3.py                  1408  0.00s             1           0  0.09s           2024-07-05T05:23:06
+/opt/airflow/dags/dag_with_postgress_hook.py            1405  0.01s             1           0  0.09s           2024-07-05T05:23:06
+/opt/airflow/dags/dag_with_postgres_operator.py                                 1           0  0.09s           2024-07-05T05:23:06
+/opt/airflow/dags/dag_with_cross_expression.py                                  1           0  0.09s           2024-07-05T05:23:06
+/opt/airflow/dags/our_first_dag.py                                              1           0  0.09s           2024-07-05T05:23:07
+/opt/airflow/dags/ml_pipeline_with_docker_operator.py                           1           0  0.09s           2024-07-05T05:23:26
+/opt/airflow/dags/dag_with_python_dependence.py                                 1           0  0.09s           2024-07-05T05:23:06
+================================================================================
+[2024-07-05T05:24:07.550+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                                PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-----------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/dag_with_catchup_and_backfill.py                              1           0  0.11s           2024-07-05T05:23:38
+/opt/airflow/dags/dag_with_postgres_operator.py                                 1           0  0.11s           2024-07-05T05:23:37
+/opt/airflow/dags/dag_with_python_dependence.py                                 1           0  0.10s           2024-07-05T05:23:36
+/opt/airflow/dags/create_dag_with_python_operator.py                            1           0  0.10s           2024-07-05T05:23:38
+/opt/airflow/dags/dag_with_postgress_hook.py            1466  0.01s             1           0  0.10s           2024-07-05T05:23:36
+/opt/airflow/dags/dag_with_minio_s3.py                  1469  0.01s             1           0  0.10s           2024-07-05T05:23:36
+/opt/airflow/dags/our_first_dag.py                                              1           0  0.10s           2024-07-05T05:23:38
+/opt/airflow/dags/dag_with_cross_expression.py                                  1           0  0.10s           2024-07-05T05:23:37
+/opt/airflow/dags/dag_with_task_flow_api.py                                     1           0  0.09s           2024-07-05T05:23:38
+/opt/airflow/dags/ml_pipeline_with_docker_operator.py                           1           0  0.09s           2024-07-05T05:23:57
+/opt/airflow/dags/xcom_dag.py                                                   1           0  0.09s           2024-07-05T05:23:38
+================================================================================
+[2024-07-05T05:24:38.296+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                                PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-----------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/dag_with_postgres_operator.py                                 1           0  0.15s           2024-07-05T05:24:07
+/opt/airflow/dags/dag_with_cross_expression.py                                  1           0  0.14s           2024-07-05T05:24:07
+/opt/airflow/dags/dag_with_minio_s3.py                  1536  0.00s             1           0  0.14s           2024-07-05T05:24:07
+/opt/airflow/dags/dag_with_python_dependence.py                                 1           0  0.14s           2024-07-05T05:24:07
+/opt/airflow/dags/dag_with_postgress_hook.py            1533  0.01s             1           0  0.14s           2024-07-05T05:24:07
+/opt/airflow/dags/dag_with_task_flow_api.py                                     1           0  0.12s           2024-07-05T05:24:08
+/opt/airflow/dags/dag_with_catchup_and_backfill.py                              1           0  0.11s           2024-07-05T05:24:08
+/opt/airflow/dags/xcom_dag.py                                                   1           0  0.11s           2024-07-05T05:24:09
+/opt/airflow/dags/create_dag_with_python_operator.py                            1           0  0.11s           2024-07-05T05:24:09
+/opt/airflow/dags/our_first_dag.py                                              1           0  0.11s           2024-07-05T05:24:09
+/opt/airflow/dags/ml_pipeline_with_docker_operator.py                           1           0  0.09s           2024-07-05T05:24:28
+================================================================================
+[2024-07-05T05:25:09.003+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                                PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-----------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/dag_with_catchup_and_backfill.py                              1           0  0.10s           2024-07-05T05:24:39
+/opt/airflow/dags/dag_with_postgres_operator.py                                 1           0  0.09s           2024-07-05T05:24:38
+/opt/airflow/dags/dag_with_minio_s3.py                  1597  0.00s             1           0  0.09s           2024-07-05T05:24:38
+/opt/airflow/dags/create_dag_with_python_operator.py                            1           0  0.09s           2024-07-05T05:24:39
+/opt/airflow/dags/dag_with_postgress_hook.py            1594  0.01s             1           0  0.09s           2024-07-05T05:24:38
+/opt/airflow/dags/our_first_dag.py                                              1           0  0.09s           2024-07-05T05:24:39
+/opt/airflow/dags/dag_with_cross_expression.py                                  1           0  0.09s           2024-07-05T05:24:38
+/opt/airflow/dags/xcom_dag.py                                                   1           0  0.09s           2024-07-05T05:24:39
+/opt/airflow/dags/dag_with_task_flow_api.py                                     1           0  0.09s           2024-07-05T05:24:39
+/opt/airflow/dags/dag_with_python_dependence.py                                 1           0  0.09s           2024-07-05T05:24:38
+/opt/airflow/dags/ml_pipeline_with_docker_operator.py                           1           0  0.08s           2024-07-05T05:24:59
+================================================================================
