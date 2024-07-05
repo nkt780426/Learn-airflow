@@ -170,3 +170,94 @@
 [2024-07-05T05:25:09.221+0000] {logging_mixin.py:188} INFO - [2024-07-05T05:25:09.221+0000] {dag.py:3096} INFO - Sync 1 DAGs
 [2024-07-05T05:25:09.240+0000] {logging_mixin.py:188} INFO - [2024-07-05T05:25:09.240+0000] {dag.py:3954} INFO - Setting next_dagrun for dag_with_cross_expression_v03 to 2024-06-25 03:00:00+00:00, run_after=2024-06-26 03:00:00+00:00
 [2024-07-05T05:25:09.260+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag_with_cross_expression.py took 0.074 seconds
+[2024-07-05T05:25:39.910+0000] {processor.py:161} INFO - Started process (PID=1673) to work on /opt/airflow/dags/dag_with_cross_expression.py
+[2024-07-05T05:25:39.911+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag_with_cross_expression.py for tasks to queue
+[2024-07-05T05:25:39.913+0000] {logging_mixin.py:188} INFO - [2024-07-05T05:25:39.913+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/dag_with_cross_expression.py
+[2024-07-05T05:25:39.921+0000] {processor.py:840} INFO - DAG(s) 'dag_with_cross_expression_v03' retrieved from /opt/airflow/dags/dag_with_cross_expression.py
+[2024-07-05T05:25:39.939+0000] {logging_mixin.py:188} INFO - [2024-07-05T05:25:39.939+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-07-05T05:25:39.957+0000] {logging_mixin.py:188} INFO - [2024-07-05T05:25:39.956+0000] {dag.py:3954} INFO - Setting next_dagrun for dag_with_cross_expression_v03 to 2024-06-25 03:00:00+00:00, run_after=2024-06-26 03:00:00+00:00
+[2024-07-05T05:25:39.978+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag_with_cross_expression.py took 0.076 seconds
+[2024-07-05T05:26:10.676+0000] {processor.py:161} INFO - Started process (PID=1734) to work on /opt/airflow/dags/dag_with_cross_expression.py
+[2024-07-05T05:26:10.677+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag_with_cross_expression.py for tasks to queue
+[2024-07-05T05:26:10.679+0000] {logging_mixin.py:188} INFO - [2024-07-05T05:26:10.679+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/dag_with_cross_expression.py
+[2024-07-05T05:26:10.689+0000] {processor.py:840} INFO - DAG(s) 'dag_with_cross_expression_v03' retrieved from /opt/airflow/dags/dag_with_cross_expression.py
+[2024-07-05T05:26:10.712+0000] {logging_mixin.py:188} INFO - [2024-07-05T05:26:10.712+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-07-05T05:26:10.735+0000] {logging_mixin.py:188} INFO - [2024-07-05T05:26:10.734+0000] {dag.py:3954} INFO - Setting next_dagrun for dag_with_cross_expression_v03 to 2024-06-25 03:00:00+00:00, run_after=2024-06-26 03:00:00+00:00
+[2024-07-05T05:26:10.760+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag_with_cross_expression.py took 0.096 seconds
+[2024-07-05T05:26:41.427+0000] {processor.py:161} INFO - Started process (PID=1795) to work on /opt/airflow/dags/dag_with_cross_expression.py
+[2024-07-05T05:26:41.428+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag_with_cross_expression.py for tasks to queue
+[2024-07-05T05:26:41.429+0000] {logging_mixin.py:188} INFO - [2024-07-05T05:26:41.429+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/dag_with_cross_expression.py
+[2024-07-05T05:26:41.437+0000] {processor.py:840} INFO - DAG(s) 'dag_with_cross_expression_v03' retrieved from /opt/airflow/dags/dag_with_cross_expression.py
+[2024-07-05T05:26:41.461+0000] {logging_mixin.py:188} INFO - [2024-07-05T05:26:41.461+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-07-05T05:26:41.483+0000] {logging_mixin.py:188} INFO - [2024-07-05T05:26:41.483+0000] {dag.py:3954} INFO - Setting next_dagrun for dag_with_cross_expression_v03 to 2024-06-25 03:00:00+00:00, run_after=2024-06-26 03:00:00+00:00
+[2024-07-05T05:26:41.506+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag_with_cross_expression.py took 0.088 seconds
+[2024-07-05T05:27:12.326+0000] {processor.py:161} INFO - Started process (PID=1866) to work on /opt/airflow/dags/dag_with_cross_expression.py
+[2024-07-05T05:27:12.327+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag_with_cross_expression.py for tasks to queue
+[2024-07-05T05:27:12.328+0000] {logging_mixin.py:188} INFO - [2024-07-05T05:27:12.328+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/dag_with_cross_expression.py
+[2024-07-05T05:27:12.336+0000] {processor.py:840} INFO - DAG(s) 'dag_with_cross_expression_v03' retrieved from /opt/airflow/dags/dag_with_cross_expression.py
+[2024-07-05T05:27:12.354+0000] {logging_mixin.py:188} INFO - [2024-07-05T05:27:12.354+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-07-05T05:27:12.374+0000] {logging_mixin.py:188} INFO - [2024-07-05T05:27:12.374+0000] {dag.py:3954} INFO - Setting next_dagrun for dag_with_cross_expression_v03 to 2024-06-25 03:00:00+00:00, run_after=2024-06-26 03:00:00+00:00
+[2024-07-05T05:27:12.393+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag_with_cross_expression.py took 0.076 seconds
+[2024-07-05T05:27:43.049+0000] {processor.py:161} INFO - Started process (PID=1929) to work on /opt/airflow/dags/dag_with_cross_expression.py
+[2024-07-05T05:27:43.050+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag_with_cross_expression.py for tasks to queue
+[2024-07-05T05:27:43.051+0000] {logging_mixin.py:188} INFO - [2024-07-05T05:27:43.051+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/dag_with_cross_expression.py
+[2024-07-05T05:27:43.058+0000] {processor.py:840} INFO - DAG(s) 'dag_with_cross_expression_v03' retrieved from /opt/airflow/dags/dag_with_cross_expression.py
+[2024-07-05T05:27:43.077+0000] {logging_mixin.py:188} INFO - [2024-07-05T05:27:43.076+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-07-05T05:27:43.096+0000] {logging_mixin.py:188} INFO - [2024-07-05T05:27:43.096+0000] {dag.py:3954} INFO - Setting next_dagrun for dag_with_cross_expression_v03 to 2024-06-25 03:00:00+00:00, run_after=2024-06-26 03:00:00+00:00
+[2024-07-05T05:27:43.114+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag_with_cross_expression.py took 0.074 seconds
+[2024-07-05T05:28:13.664+0000] {processor.py:161} INFO - Started process (PID=1988) to work on /opt/airflow/dags/dag_with_cross_expression.py
+[2024-07-05T05:28:13.665+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag_with_cross_expression.py for tasks to queue
+[2024-07-05T05:28:13.666+0000] {logging_mixin.py:188} INFO - [2024-07-05T05:28:13.666+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/dag_with_cross_expression.py
+[2024-07-05T05:28:13.673+0000] {processor.py:840} INFO - DAG(s) 'dag_with_cross_expression_v03' retrieved from /opt/airflow/dags/dag_with_cross_expression.py
+[2024-07-05T05:28:13.690+0000] {logging_mixin.py:188} INFO - [2024-07-05T05:28:13.690+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-07-05T05:28:13.708+0000] {logging_mixin.py:188} INFO - [2024-07-05T05:28:13.708+0000] {dag.py:3954} INFO - Setting next_dagrun for dag_with_cross_expression_v03 to 2024-06-25 03:00:00+00:00, run_after=2024-06-26 03:00:00+00:00
+[2024-07-05T05:28:13.726+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag_with_cross_expression.py took 0.070 seconds
+[2024-07-05T05:28:44.333+0000] {processor.py:161} INFO - Started process (PID=2051) to work on /opt/airflow/dags/dag_with_cross_expression.py
+[2024-07-05T05:28:44.334+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag_with_cross_expression.py for tasks to queue
+[2024-07-05T05:28:44.335+0000] {logging_mixin.py:188} INFO - [2024-07-05T05:28:44.335+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/dag_with_cross_expression.py
+[2024-07-05T05:28:44.343+0000] {processor.py:840} INFO - DAG(s) 'dag_with_cross_expression_v03' retrieved from /opt/airflow/dags/dag_with_cross_expression.py
+[2024-07-05T05:28:44.362+0000] {logging_mixin.py:188} INFO - [2024-07-05T05:28:44.362+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-07-05T05:28:44.383+0000] {logging_mixin.py:188} INFO - [2024-07-05T05:28:44.382+0000] {dag.py:3954} INFO - Setting next_dagrun for dag_with_cross_expression_v03 to 2024-06-25 03:00:00+00:00, run_after=2024-06-26 03:00:00+00:00
+[2024-07-05T05:28:44.401+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag_with_cross_expression.py took 0.076 seconds
+[2024-07-05T05:29:14.950+0000] {processor.py:161} INFO - Started process (PID=2110) to work on /opt/airflow/dags/dag_with_cross_expression.py
+[2024-07-05T05:29:14.950+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag_with_cross_expression.py for tasks to queue
+[2024-07-05T05:29:14.951+0000] {logging_mixin.py:188} INFO - [2024-07-05T05:29:14.951+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/dag_with_cross_expression.py
+[2024-07-05T05:29:14.959+0000] {processor.py:840} INFO - DAG(s) 'dag_with_cross_expression_v03' retrieved from /opt/airflow/dags/dag_with_cross_expression.py
+[2024-07-05T05:29:14.980+0000] {logging_mixin.py:188} INFO - [2024-07-05T05:29:14.980+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-07-05T05:29:15.001+0000] {logging_mixin.py:188} INFO - [2024-07-05T05:29:15.001+0000] {dag.py:3954} INFO - Setting next_dagrun for dag_with_cross_expression_v03 to 2024-06-25 03:00:00+00:00, run_after=2024-06-26 03:00:00+00:00
+[2024-07-05T05:29:15.023+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag_with_cross_expression.py took 0.083 seconds
+[2024-07-05T05:29:45.592+0000] {processor.py:161} INFO - Started process (PID=2171) to work on /opt/airflow/dags/dag_with_cross_expression.py
+[2024-07-05T05:29:45.593+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag_with_cross_expression.py for tasks to queue
+[2024-07-05T05:29:45.594+0000] {logging_mixin.py:188} INFO - [2024-07-05T05:29:45.594+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/dag_with_cross_expression.py
+[2024-07-05T05:29:45.602+0000] {processor.py:840} INFO - DAG(s) 'dag_with_cross_expression_v03' retrieved from /opt/airflow/dags/dag_with_cross_expression.py
+[2024-07-05T05:29:45.620+0000] {logging_mixin.py:188} INFO - [2024-07-05T05:29:45.620+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-07-05T05:29:45.638+0000] {logging_mixin.py:188} INFO - [2024-07-05T05:29:45.638+0000] {dag.py:3954} INFO - Setting next_dagrun for dag_with_cross_expression_v03 to 2024-06-25 03:00:00+00:00, run_after=2024-06-26 03:00:00+00:00
+[2024-07-05T05:29:45.660+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag_with_cross_expression.py took 0.077 seconds
+[2024-07-05T05:30:16.289+0000] {processor.py:161} INFO - Started process (PID=2232) to work on /opt/airflow/dags/dag_with_cross_expression.py
+[2024-07-05T05:30:16.290+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag_with_cross_expression.py for tasks to queue
+[2024-07-05T05:30:16.290+0000] {logging_mixin.py:188} INFO - [2024-07-05T05:30:16.290+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/dag_with_cross_expression.py
+[2024-07-05T05:30:16.298+0000] {processor.py:840} INFO - DAG(s) 'dag_with_cross_expression_v03' retrieved from /opt/airflow/dags/dag_with_cross_expression.py
+[2024-07-05T05:30:16.315+0000] {logging_mixin.py:188} INFO - [2024-07-05T05:30:16.315+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-07-05T05:30:16.335+0000] {logging_mixin.py:188} INFO - [2024-07-05T05:30:16.334+0000] {dag.py:3954} INFO - Setting next_dagrun for dag_with_cross_expression_v03 to 2024-06-25 03:00:00+00:00, run_after=2024-06-26 03:00:00+00:00
+[2024-07-05T05:30:16.353+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag_with_cross_expression.py took 0.073 seconds
+[2024-07-05T05:30:46.998+0000] {processor.py:161} INFO - Started process (PID=2293) to work on /opt/airflow/dags/dag_with_cross_expression.py
+[2024-07-05T05:30:46.999+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag_with_cross_expression.py for tasks to queue
+[2024-07-05T05:30:47.000+0000] {logging_mixin.py:188} INFO - [2024-07-05T05:30:46.999+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/dag_with_cross_expression.py
+[2024-07-05T05:30:47.008+0000] {processor.py:840} INFO - DAG(s) 'dag_with_cross_expression_v03' retrieved from /opt/airflow/dags/dag_with_cross_expression.py
+[2024-07-05T05:30:47.025+0000] {logging_mixin.py:188} INFO - [2024-07-05T05:30:47.025+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-07-05T05:30:47.043+0000] {logging_mixin.py:188} INFO - [2024-07-05T05:30:47.043+0000] {dag.py:3954} INFO - Setting next_dagrun for dag_with_cross_expression_v03 to 2024-06-25 03:00:00+00:00, run_after=2024-06-26 03:00:00+00:00
+[2024-07-05T05:30:47.061+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag_with_cross_expression.py took 0.071 seconds
+[2024-07-05T05:31:17.675+0000] {processor.py:161} INFO - Started process (PID=2354) to work on /opt/airflow/dags/dag_with_cross_expression.py
+[2024-07-05T05:31:17.675+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag_with_cross_expression.py for tasks to queue
+[2024-07-05T05:31:17.676+0000] {logging_mixin.py:188} INFO - [2024-07-05T05:31:17.676+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/dag_with_cross_expression.py
+[2024-07-05T05:31:17.683+0000] {processor.py:840} INFO - DAG(s) 'dag_with_cross_expression_v03' retrieved from /opt/airflow/dags/dag_with_cross_expression.py
+[2024-07-05T05:31:17.700+0000] {logging_mixin.py:188} INFO - [2024-07-05T05:31:17.700+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-07-05T05:31:17.719+0000] {logging_mixin.py:188} INFO - [2024-07-05T05:31:17.719+0000] {dag.py:3954} INFO - Setting next_dagrun for dag_with_cross_expression_v03 to 2024-06-25 03:00:00+00:00, run_after=2024-06-26 03:00:00+00:00
+[2024-07-05T05:31:17.738+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag_with_cross_expression.py took 0.072 seconds
+[2024-07-05T05:31:48.410+0000] {processor.py:161} INFO - Started process (PID=2416) to work on /opt/airflow/dags/dag_with_cross_expression.py
+[2024-07-05T05:31:48.411+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag_with_cross_expression.py for tasks to queue
+[2024-07-05T05:31:48.412+0000] {logging_mixin.py:188} INFO - [2024-07-05T05:31:48.412+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/dag_with_cross_expression.py
+[2024-07-05T05:31:48.421+0000] {processor.py:840} INFO - DAG(s) 'dag_with_cross_expression_v03' retrieved from /opt/airflow/dags/dag_with_cross_expression.py
+[2024-07-05T05:31:48.439+0000] {logging_mixin.py:188} INFO - [2024-07-05T05:31:48.439+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-07-05T05:31:48.458+0000] {logging_mixin.py:188} INFO - [2024-07-05T05:31:48.458+0000] {dag.py:3954} INFO - Setting next_dagrun for dag_with_cross_expression_v03 to 2024-06-25 03:00:00+00:00, run_after=2024-06-26 03:00:00+00:00
+[2024-07-05T05:31:48.478+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag_with_cross_expression.py took 0.079 seconds

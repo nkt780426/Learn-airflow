@@ -11,7 +11,7 @@ default_args = {
 }
 
 with DAG(
-    dag_id='dag_ml_pipeline_docker_operator_v01',
+    dag_id='dag_ml_pipeline_docker_operator_v02',
     default_args=default_args,
     description='Run ML pipeline with docker operator in Airflow locally',
     schedule_interval=None,  # Set your desired schedule interval or use None for manual triggering
@@ -37,7 +37,7 @@ with DAG(
             'MINIO_SECRET_ACCESS_KEY': 'WomfMRMWNnhISl7v0SOCa2nXIDEkbYAzAuhYF2ug',
             'MINIO_BUCKET_NAME': 'airflow',
         },  # Set environment variables inside the contain
-        command=['python', 'model_tuning.py'],  # Replace with the command you want to run inside the container
+        command=['python', 'train_and_publish.py'],  # Replace with the command you want to run inside the container
         # network_mode='bridge',  # Specify the network mode if needed
         # volumes=['/host/path:/container/path'],  # Mount volumes if needed
         dag=dag,
