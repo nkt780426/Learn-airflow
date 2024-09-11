@@ -180,5 +180,28 @@ services:
       - -c
       - airflow
 
+  docker-proxy:
+    image: tecnativa/docker-socket-proxy:latest
+    environment:
+      - CONTAINERS=1
+      - IMAGES=1
+      - AUTH=1
+      - POST=1
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    restart: always
+
+  minio:
+    image: quay.io/minio/minio:latest
+    container_name: minio_server
+    command: server /data --console-address ":9001"
+    environment:
+      - MINIO_ROOT_USER=admin
+      - MINIO_ROOT_PASSWORD=password
+    ports:
+      - "9000:9000"
+      - "9001:9001"
+    volumes:
+      - ./minio/data:/data
 volumes:
   postgres-db-volume:

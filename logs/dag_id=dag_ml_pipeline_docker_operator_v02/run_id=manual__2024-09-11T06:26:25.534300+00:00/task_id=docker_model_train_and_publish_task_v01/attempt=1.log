@@ -1,0 +1,42 @@
+[2024-09-11T06:26:27.060+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-09-11T06:26:27.088+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: dag_ml_pipeline_docker_operator_v02.docker_model_train_and_publish_task_v01 manual__2024-09-11T06:26:25.534300+00:00 [queued]>
+[2024-09-11T06:26:27.095+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: dag_ml_pipeline_docker_operator_v02.docker_model_train_and_publish_task_v01 manual__2024-09-11T06:26:25.534300+00:00 [queued]>
+[2024-09-11T06:26:27.096+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-09-11T06:26:27.112+0000] {taskinstance.py:2330} INFO - Executing <Task(DockerOperator): docker_model_train_and_publish_task_v01> on 2024-09-11 06:26:25.534300+00:00
+[2024-09-11T06:26:27.119+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'dag_ml_pipeline_docker_operator_v02', 'docker_model_train_and_publish_task_v01', 'manual__2024-09-11T06:26:25.534300+00:00', '--job-id', '4', '--raw', '--subdir', 'DAGS_FOLDER/18_ml_pipeline_with_docker_operator.py', '--cfg-path', '/tmp/tmpuzl52z46']
+[2024-09-11T06:26:27.121+0000] {standard_task_runner.py:91} INFO - Job 4: Subtask docker_model_train_and_publish_task_v01
+[2024-09-11T06:26:27.121+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61 DeprecationWarning: This process (pid=368) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2024-09-11T06:26:27.122+0000] {standard_task_runner.py:63} INFO - Started process 369 to run task
+[2024-09-11T06:26:27.160+0000] {task_command.py:426} INFO - Running <TaskInstance: dag_ml_pipeline_docker_operator_v02.docker_model_train_and_publish_task_v01 manual__2024-09-11T06:26:25.534300+00:00 [running]> on host b7a43554df14
+[2024-09-11T06:26:27.236+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='coder2j' AIRFLOW_CTX_DAG_ID='dag_ml_pipeline_docker_operator_v02' AIRFLOW_CTX_TASK_ID='docker_model_train_and_publish_task_v01' AIRFLOW_CTX_EXECUTION_DATE='2024-09-11T06:26:25.534300+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-09-11T06:26:25.534300+00:00'
+[2024-09-11T06:26:27.237+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-09-11T06:26:27.253+0000] {docker.py:157} ERROR - Failed to establish connection to Docker host unix://var/run/docker.sock: Error while fetching server API version: ('Connection aborted.', PermissionError(13, 'Permission denied'))
+[2024-09-11T06:26:27.254+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-09-11T06:26:27.262+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 401, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/providers/docker/operators/docker.py", line 492, in execute
+    if self.force_pull or not self.cli.images(name=self.image):
+                              ^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/providers/docker/operators/docker.py", line 362, in cli
+    return self.hook.api_client
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/functools.py", line 995, in __get__
+    val = self.func(instance)
+          ^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/providers/docker/hooks/docker.py", line 161, in api_client
+    raise AirflowException("Failed to establish connection to any given Docker hosts.")
+airflow.exceptions.AirflowException: Failed to establish connection to any given Docker hosts.
+[2024-09-11T06:26:27.265+0000] {taskinstance.py:1206} INFO - Marking task as FAILED. dag_id=dag_ml_pipeline_docker_operator_v02, task_id=docker_model_train_and_publish_task_v01, run_id=manual__2024-09-11T06:26:25.534300+00:00, execution_date=20240911T062625, start_date=20240911T062627, end_date=20240911T062627
+[2024-09-11T06:26:27.279+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 4 for task docker_model_train_and_publish_task_v01 (Failed to establish connection to any given Docker hosts.; 369)
+[2024-09-11T06:26:27.296+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 1
+[2024-09-11T06:26:27.309+0000] {taskinstance.py:3503} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-09-11T06:26:27.315+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

@@ -1,4 +1,6 @@
-Nguồn học: https://www.youtube.com/watch?v=K9AnJ9_ZAXE&t=234s
+Nguồn học: 
+- https://www.youtube.com/watch?v=K9AnJ9_ZAXE&t=234s
+- https://www.youtube.com/watch?v=uZy2Lwioi3g&t=336s
 
 1. Airflow Introduction
 2. Run Airflow in Python Env (không dùng, thích có thể xem cài đặt trên Linux)
@@ -71,7 +73,7 @@ Execution Date, Task Instance, Dag run là gì ? (hình 4. instance)
 
 - Trong docker compose clone về từ hãng, chỉnh lại biến môi trường sau để không load các example mẫu
     AIRFLOW__CORE__LOAD_EXAMPLES: 'false'
-- Xem file first_dag.py trong thư mục dags
+- Xem file our_first_dag.py trong thư mục dags
 
 8. Airflow DAG with Python Operator
 
@@ -106,16 +108,21 @@ Airflow cung cấp 1 vài cross_expression có sẵn (xem hình 12. airflow_cros
 - Sử dụng trang crontab guru để sinh cross expression phù hợp
 Xem file dag_with_cross_expression.py
 
-13. Airflow Connection to Postgres
+13+14. Airflow Connection to Postgres
 
 Khi viết script ELT, hiển nhiên phải có nhu cầu kết nối đến nhiều source để thu thập dữ liệu (hình 13. collection)
 - Để kết nối với các thành phần này, nhiều lúc bạn cần phải cung cấp username/password/ip_host/...
 - Airflow collection được thực hiện bởi corresponding operator (là tập hợp các operator làm mục đích kết nối đọc phần 14, 15, 16, 17)
 - Xem file dag_with_postgres_operator.py
 
-14. Airflow Postgres Operator
+Tạo connection_id vào postgres database trong airflow
+- Dùng Dbeaver tạo test database
+- (hình 13.postgres_connection)
+- Chạy dag và xem log
 
-Xem file dag_with_postgres_operator.py
+Postgres_Operator giúp tương tác với DB bằng cách thực thi các lệnh sql như SELECT, INSERT, UPDATE, DELETE, ... 
+Tuy nhiên nó được thực hiện bằng tham số sql được định nghĩa operator và chỉ thực hiện được 1 câu lệnh tại 1 task. 
+Điều này dẫn đến việc operator này chỉ có thể tương tác với câu lệnh sql đơn giản, ko có khả năng tương tác với python
 
 15. Airflow Docker Install Python Package 2 ways
 
@@ -138,41 +145,53 @@ Extension airflow image
 
 16. Airflow AWS S3 Sensor Operator
 
-Sensor operator là 1 loại operator đặc biệt, nó sẽ được kích hoạt khi có sự kiện nào đó xảy ra (ví dụ khi update 1 file csv trên s3)
+Sensor operator là 1 loại operator đặc biệt, nó sẽ được kích hoạt khi có sự kiện nào đó xảy ra tại bất kỳ thời điểm nào (ví dụ khi update 1 file csv trên s3)
 Cài MinIO:
 - Cài theo phương thức Docker root full và set up thư mục data trong project này thay vì ~/minio/data
-    mkdir -p ./minio/data
-    docker run \
-    -p 9000:9000 \
-    -p 9001:9001 \
-    --name minio \
-    -v ./minio/data:/data \
-    -e "MINIO_ROOT_USER=ROOTNAME" \
-    -e "MINIO_ROOT_PASSWORD=CHANGEME123" \
-    quay.io/minio/minio server /data --console-address ":9001"
+    Đã có service minio trong docker-compose rồi
 - Tạo airflow bucket và kéo file csv mẫu trong thư mục data vào bucket
 - Vào container scheduler chạy lệnh sau để tìm version của apache-airflow-providers-amazon
     pip list | grep amazon
+- Provider là packages của bên thứ 3 cung cấp cho airflow (operator, sensor, hook, transfer) để airflow có thể tương tác với dịch vụ của họ. Hiển nhiên mỗi version của packages thì các api có thể sẽ thay đổi vậy nên mới cần phải check version.
+- Trang web tổng hợp các provider của airflow (https://airflow.apache.org/docs/). Tìm apache > python api > tìm api sensor.s3 trong trang
     
-- Lưu ý, AWS S3 connection đã bị removed và thay bằng https://www.youtube.com/watch?v=sVNvAtIZWdQ&t=184s (chú ý cái endpoint)
+- Lưu ý: AWS S3 connection đã bị removed và thay bằng https://www.youtube.com/watch?v=sVNvAtIZWdQ&t=184s (chú ý cái endpoint). Xem (hình 16. minio_connection) và tạo key trên minio.
+
 17. Airflow Hooks S3 PostgreSQL
 
-Airflow Hook được sử dụng để tạo 1 kết nối với các hệ thống và dịch vụ bên ngoài như CSDL và các hệ thống lưu trữ đám mây khác. Hooks cung cấp 1 lớp trừu tượng để dễ dàng giao tiếp với các dịch vụ bên ngoài mà không cần phải viết mã kết nối từng loại cho chúng
+Tương tự như PostgresOperator nhưng nó không chỉ giới hạn ở việc chỉ có thể chạy lệnh sql.
+Hooks api cung cấp 1 python api trừu tượng, qua đó ta có thể viết các task phức tạp bằng python và sql để tương tác nguồn.
+Chạy  file dag_wwith_postgress_hook
+- Xem từ 1:44:09 đến 1:44:32
+```sh
+create table if not exists public.orders (
+	order_id character varying,
+	date date,
+	product_name character varying,
+	quantity integer,
+	primary key (order_id)
+)
+
+select * from public.orders limit 100
+```
 
 18. DockerOperator
-- Cách fix lỗi: https://github.com/apache/airflow/issues/16803
-=> sudo chmode 777 /var/run/docker.sock
+Khi làm việc với docker operator thường gặp lỗi do server airflow không có quyền truy cập doker.sock
+C1: https://github.com/apache/airflow/issues/16803
+=> sudo chmod 777 /var/run/docker.sock
     Thêm 2 volume 
         '/var/run/docker.sock:/var/run/docker.sock'
         '/tmp:/tmp'
     Kích hoạt bật xác thực không TLS
         Docker desktop => General => Bật TLS tcp:2375 gì đó
+C2: Tạo 1 image proxy
 
 Phần tiếp theo của khóa học 2 tiếng trên: https://www.youtube.com/watch?v=uZy2Lwioi3g&t=336s
 DockerOperator sẽ tun task bên trong Docker container thay vì PythonOperator như ở trên
 Tải sao cần DockerOpertor ?
 - Code isolation: nếu sử dụng PythonOperator sẽ phải định nghĩa các python function trong DAG, điều này sẽ tốt nếu workflow của bạn đơn giản. Tuy nhiên khi đối đầu với complex logic, cách tốt nhất là chia project ra thành các phần độc lập với nhau để dễ bảo trì
 - Sử dụng container giúp cải thiện khả năng tái sử dụng và mở rộng hệ thống bằng cách đóng gói lại trong Docker images
+cd src
 
 docker build -t regression-training-image:v1.0 .
 
@@ -235,3 +254,6 @@ Theo mặc định khi dùng [docker-compose](https://airflow.apache.org/docs/ap
     7. airflow-init: Thực hiện các bước khởi tạo cần thiết trước khi các dịch vụ chính của Airflow được khởi động, chẳng hạn như tạo người dùng quản trị và thiết lập cơ sở dữ liệu.
     8. airflow-cli: Cung cấp một container để thực thi các lệnh Airflow từ dòng lệnh.
     9. flower: Cung cấp giao diện web để giám sát và quản lý các worker của Celery. (mở port 5555 để nhiìn giao diện flower)
+
+20. Chuyển đổi workspace Airflow
+Vào file docker-compose search "AIRFLOW_PROJ_DIR" sẽ thấy mặc định airflow sẽ hoạt động ở thưc mục "." so với file docker-compose. Để đổi nó, tạo biến "AIRFLOW_PROJ_DIR=../src/airflow" trong file .env trước khi start.
