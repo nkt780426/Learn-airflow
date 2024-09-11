@@ -1,13 +1,16 @@
-Nguồn: 
+# Nguồn học:
     https://airflow.apache.org/docs/apache-airflow/stable/howto/docker-compose/index.html
-Chạy:
+
+# Chạy:
+```sh
 docker compose up airflow-init
 docker compose up -d
-
-Dừng
+```
+# Dừng
+```sh
 docker compose down -v
-
-Chạy minio:
+```
+# Chạy minio:
 mkdir -p ./minio/data
 docker run \
     -p 9000:9000 \
